@@ -118,7 +118,7 @@ EnveuRequestBuilder.prototype.completion = function (callback) {
  * @return 
  */
 EnveuRequestBuilder.prototype.doHttpRequest = function (client) {
-    var json = this.data;
+    var data = this.data;
     var callback = this.callback;
     var url = this.getUrl(client);
 
@@ -128,9 +128,9 @@ EnveuRequestBuilder.prototype.doHttpRequest = function (client) {
     headers["x-api-key"] = client.config.apiKey;
 
     client.log('URL: ' + url);
-    client.log('Request JSON: ' + JSON.stringify(json));
+    client.log('Request JSON: ' + JSON.stringify(data));
 
-    var data = JSON.stringify(json);
+    //var data = JSON.stringify(json);
 
     $.ajax({
         type: this.enveuHTTPRequestType,
